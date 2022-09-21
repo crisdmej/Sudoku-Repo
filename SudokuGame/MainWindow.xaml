@@ -1,0 +1,53 @@
+﻿<Window x:Class="SudokuGame.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SudokuGame"
+        mc:Ignorable="d"
+        Title="Main Menu" Height="750" Width="800" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Width="500" Height="650">
+            <TextBlock Text="Sudoku" FontSize="45" Margin="30" Foreground="DodgerBlue" FontWeight="Bold" TextAlignment="Center"/>
+            <Button x:Name="newGameButton" Width="300" Content="New Game" Click="NewGameButton_Click" Margin="0 30 0 10" FontSize="40" Foreground="White" Style="{StaticResource ButtonRound}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#29b6f6" Offset="0.0"/>
+                        <GradientStop Color="#039bf5" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Label Content="Select Difficulty" HorizontalAlignment="Center" FontSize="20" Foreground="DodgerBlue" FontWeight="DemiBold"/>
+            <ComboBox x:Name="difficultyComboBox" Text="Select Difficulty" Width="300" Height="50" FontSize="30">
+                <ComboBoxItem Content="Easy"/>
+                <ComboBoxItem Content="Medium"/>
+                <ComboBoxItem Content="Hard"/>
+                <ComboBoxItem Content="Expert"/>
+            </ComboBox>
+            <Button x:Name="continueGameButton" Click="continueGameButton_Click" Width="300" Content="Continue Game" Margin="0 30 0 10" FontSize="40" Foreground="White" Style="{StaticResource ButtonRound}" Visibility="Collapsed">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#29b6f6" Offset="0.0"/>
+                        <GradientStop Color="#039bf5" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="leaderboardButton" Click="leaderboardButton_Click" Width="300" Content="Leaderboard" Margin="0 30 0 10" FontSize="40" Foreground="White" Style="{StaticResource ButtonRound}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#29b6f6" Offset="0.0"/>
+                        <GradientStop Color="#039bf5" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="exitButton" Click="exitButton_Click" Width="300" Content="Exit" Margin="0 30 0 10" FontSize="40" Foreground="White" Style="{StaticResource ButtonRound}">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#29b6f6" Offset="0.0"/>
+                        <GradientStop Color="#039bf5" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Window>

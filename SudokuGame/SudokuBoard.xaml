@@ -1,0 +1,1041 @@
+﻿<Window x:Class="SudokuGame.SudokuBoard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SudokuGame"
+        mc:Ignorable="d"
+        Title="Play Game" Height="600" Width="700" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="3"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="3"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="3"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="3"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="textBox1" Grid.Row="2" Grid.Column="2" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown"  FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox2" Grid.Row="2" Grid.Column="3" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox3" Grid.Row="2" Grid.Column="4" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox4" Grid.Row="2" Grid.Column="6" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox5" Grid.Row="2" Grid.Column="7" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox6" Grid.Row="2" Grid.Column="8" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox7" Grid.Row="2" Grid.Column="10" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox8" Grid.Row="2" Grid.Column="11" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox9" Grid.Row="2" Grid.Column="12" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox10" Grid.Row="3" Grid.Column="2" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox11" Grid.Row="3" Grid.Column="3" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox12" Grid.Row="3" Grid.Column="4" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox13" Grid.Row="3" Grid.Column="6" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox14" Grid.Row="3" Grid.Column="7" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox15" Grid.Row="3" Grid.Column="8" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox16" Grid.Row="3" Grid.Column="10" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox17" Grid.Row="3" Grid.Column="11" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox18" Grid.Row="3" Grid.Column="12" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox19" Grid.Row="4" Grid.Column="2" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox20" Grid.Row="4" Grid.Column="3" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox21" Grid.Row="4" Grid.Column="4" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox22" Grid.Row="4" Grid.Column="6" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox23" Grid.Row="4" Grid.Column="7" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox24" Grid.Row="4" Grid.Column="8" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox25" Grid.Row="4" Grid.Column="10" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox26" Grid.Row="4" Grid.Column="11" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox27" Grid.Row="4" Grid.Column="12" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox28" Grid.Row="6" Grid.Column="2" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox29" Grid.Row="6" Grid.Column="3" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox30" Grid.Row="6" Grid.Column="4" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox31" Grid.Row="6" Grid.Column="6" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox32" Grid.Row="6" Grid.Column="7" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox33" Grid.Row="6" Grid.Column="8" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox34" Grid.Row="6" Grid.Column="10" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox35" Grid.Row="6" Grid.Column="11" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox36" Grid.Row="6" Grid.Column="12" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox37" Grid.Row="7" Grid.Column="2" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox38" Grid.Row="7" Grid.Column="3" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox39" Grid.Row="7" Grid.Column="4" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox40" Grid.Row="7" Grid.Column="6" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox41" Grid.Row="7" Grid.Column="7" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox42" Grid.Row="7" Grid.Column="8" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox43" Grid.Row="7" Grid.Column="10" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox44" Grid.Row="7" Grid.Column="11" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox45" Grid.Row="7" Grid.Column="12" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox46" Grid.Row="8" Grid.Column="2" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox47" Grid.Row="8" Grid.Column="3" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox48" Grid.Row="8" Grid.Column="4" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox49" Grid.Row="8" Grid.Column="6" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox50" Grid.Row="8" Grid.Column="7" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox51" Grid.Row="8" Grid.Column="8" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox52" Grid.Row="8" Grid.Column="10" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox53" Grid.Row="8" Grid.Column="11" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox54" Grid.Row="8" Grid.Column="12" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox55" Grid.Row="10" Grid.Column="2" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox56" Grid.Row="10" Grid.Column="3" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox57" Grid.Row="10" Grid.Column="4" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox58" Grid.Row="10" Grid.Column="6" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox59" Grid.Row="10" Grid.Column="7" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox60" Grid.Row="10" Grid.Column="8" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox61" Grid.Row="10" Grid.Column="10" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox62" Grid.Row="10" Grid.Column="11" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox63" Grid.Row="10" Grid.Column="12" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox64" Grid.Row="11" Grid.Column="2" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox65" Grid.Row="11" Grid.Column="3" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox66" Grid.Row="11" Grid.Column="4" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox67" Grid.Row="11" Grid.Column="6" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox68" Grid.Row="11" Grid.Column="7" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox69" Grid.Row="11" Grid.Column="8" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox70" Grid.Row="11" Grid.Column="10" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox71" Grid.Row="11" Grid.Column="11" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox72" Grid.Row="11" Grid.Column="12" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox73" Grid.Row="12" Grid.Column="2" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox74" Grid.Row="12" Grid.Column="3" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox75" Grid.Row="12" Grid.Column="4" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox76" Grid.Row="12" Grid.Column="6" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox77" Grid.Row="12" Grid.Column="7" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox78" Grid.Row="12" Grid.Column="8" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox79" Grid.Row="12" Grid.Column="10" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox80" Grid.Row="12" Grid.Column="11" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        <TextBox x:Name="textBox81" Grid.Row="12" Grid.Column="12" PreviewMouseUp="textbox_MouseUp" TextChanged="textbox_TextChanged" PreviewKeyDown="textbox_KeyDown" FontSize="35" TextAlignment="Center" Foreground="RoyalBlue" Cursor="Arrow"></TextBox>
+        
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="13" Background="Black"/>
+        <TextBlock Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="13" Background="Black"/>
+        <TextBlock Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="13" Background="Black"/>
+        <TextBlock Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="13" Background="Black"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.RowSpan="13" Background="Black"/>
+        <TextBlock Grid.Row="1" Grid.Column="5" Grid.RowSpan="13" Background="Black"/>
+        <TextBlock Grid.Row="1" Grid.Column="9" Grid.RowSpan="13" Background="Black"/>
+        <TextBlock Grid.Row="1" Grid.Column="13" Grid.RowSpan="13" Background="Black"/>
+
+        <Label x:Name="difficultyLabel" Content="Difficulty" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" FontSize="13" FontWeight="DemiBold"></Label>
+        <Label x:Name="hintsLabel" Content="Hints: 3/3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="3" FontSize="13" FontWeight="DemiBold"></Label>
+        <Label x:Name="mistakesLabel" Content="Mistakes: 0/3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="8" Grid.Row="0" Grid.ColumnSpan="3" FontSize="13" FontWeight="DemiBold"></Label>
+        <Label x:Name="timeLabel" Content="Time: 00:00" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="11" Grid.Row="0" Grid.ColumnSpan="2" FontSize="13" FontWeight="DemiBold"></Label>
+
+        <StackPanel Grid.Row="3" Grid.Column="14" Grid.RowSpan="8">
+            <Button x:Name="solveButton" Click="solveButton_Click" Content="Solve" HorizontalAlignment="Center" VerticalAlignment="Top" Width="125" Height="50" Margin="10" Background="White" FontSize="25" FontWeight="DemiBold" Foreground="DodgerBlue" BorderThickness="2"></Button>
+            <Button x:Name="hintButton" Click="hintButton_Click" Content="Hint" HorizontalAlignment="Center" VerticalAlignment="Top" Width="125" Height="50" Margin="10" Background="White" FontSize="25" FontWeight="DemiBold" Foreground="DodgerBlue" BorderThickness="2"></Button>
+            <Button x:Name="undoButton" Click="undoButton_Click" Content="Undo" HorizontalAlignment="Center" VerticalAlignment="Top" Width="125" Height="50" Margin="10" Background="White" FontSize="25" FontWeight="DemiBold" Foreground="DodgerBlue" BorderThickness="2"></Button>
+            <Button x:Name="notesButton" Click="notesButton_Click" Content="Notes" HorizontalAlignment="Center" VerticalAlignment="Top" Width="125" Height="50" Margin="10" Background="White" FontSize="25" FontWeight="DemiBold" Foreground="DodgerBlue" BorderThickness="2"></Button>
+            <Label Content="Notes: OFF" x:Name="notesLabel" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0" FontSize="13" FontWeight="DemiBold"></Label>
+        </StackPanel>
+
+        <WrapPanel x:Name="sudokuNotes1" Orientation="Horizontal" Grid.Row="2" Grid.Column="2">
+            <TextBlock x:Name="notes1_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes1_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes1_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes1_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes1_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes1_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes1_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes1_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes1_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes2" Orientation="Horizontal" Grid.Row="2" Grid.Column="3">
+            <TextBlock x:Name="notes2_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes2_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes2_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes2_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes2_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes2_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes2_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes2_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes2_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes3" Orientation="Horizontal" Grid.Row="2" Grid.Column="4">
+            <TextBlock x:Name="notes3_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes3_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes3_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes3_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes3_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes3_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes3_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes3_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes3_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes4" Orientation="Horizontal" Grid.Row="2" Grid.Column="6">
+            <TextBlock x:Name="notes4_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes4_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes4_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes4_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes4_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes4_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes4_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes4_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes4_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes5" Orientation="Horizontal" Grid.Row="2" Grid.Column="7">
+            <TextBlock x:Name="notes5_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes5_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes5_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes5_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes5_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes5_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes5_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes5_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes5_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes6" Orientation="Horizontal" Grid.Row="2" Grid.Column="8">
+            <TextBlock x:Name="notes6_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes6_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes6_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes6_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes6_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes6_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes6_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes6_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes6_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes7" Orientation="Horizontal" Grid.Row="2" Grid.Column="10">
+            <TextBlock x:Name="notes7_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes7_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes7_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes7_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes7_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes7_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes7_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes7_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes7_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes8" Orientation="Horizontal" Grid.Row="2" Grid.Column="11">
+            <TextBlock x:Name="notes8_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes8_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes8_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes8_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes8_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes8_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes8_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes8_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes8_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes9" Orientation="Horizontal" Grid.Row="2" Grid.Column="12">
+            <TextBlock x:Name="notes9_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes9_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes9_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes9_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes9_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes9_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes9_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes9_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes9_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes10" Orientation="Horizontal" Grid.Row="3" Grid.Column="2">
+            <TextBlock x:Name="notes10_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes10_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes10_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes10_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes10_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes10_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes10_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes10_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes10_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes11" Orientation="Horizontal" Grid.Row="3" Grid.Column="3">
+            <TextBlock x:Name="notes11_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes11_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes11_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes11_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes11_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes11_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes11_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes11_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes11_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes12" Orientation="Horizontal" Grid.Row="3" Grid.Column="4">
+            <TextBlock x:Name="notes12_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes12_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes12_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes12_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes12_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes12_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes12_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes12_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes12_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes13" Orientation="Horizontal" Grid.Row="3" Grid.Column="6">
+            <TextBlock x:Name="notes13_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes13_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes13_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes13_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes13_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes13_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes13_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes13_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes13_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes14" Orientation="Horizontal" Grid.Row="3" Grid.Column="7">
+            <TextBlock x:Name="notes14_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes14_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes14_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes14_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes14_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes14_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes14_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes14_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes14_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes15" Orientation="Horizontal" Grid.Row="3" Grid.Column="8">
+            <TextBlock x:Name="notes15_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes15_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes15_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes15_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes15_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes15_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes15_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes15_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes15_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes16" Orientation="Horizontal" Grid.Row="3" Grid.Column="10">
+            <TextBlock x:Name="notes16_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes16_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes16_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes16_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes16_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes16_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes16_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes16_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes16_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes17" Orientation="Horizontal" Grid.Row="3" Grid.Column="11">
+            <TextBlock x:Name="notes17_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes17_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes17_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes17_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes17_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes17_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes17_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes17_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes17_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes18" Orientation="Horizontal" Grid.Row="3" Grid.Column="12">
+            <TextBlock x:Name="notes18_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes18_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes18_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes18_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes18_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes18_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes18_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes18_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes18_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes19" Orientation="Horizontal" Grid.Row="4" Grid.Column="2">
+            <TextBlock x:Name="notes19_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes19_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes19_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes19_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes19_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes19_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes19_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes19_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes19_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes20" Orientation="Horizontal" Grid.Row="4" Grid.Column="3">
+            <TextBlock x:Name="notes20_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes20_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes20_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes20_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes20_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes20_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes20_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes20_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes20_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes21" Orientation="Horizontal" Grid.Row="4" Grid.Column="4">
+            <TextBlock x:Name="notes21_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes21_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes21_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes21_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes21_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes21_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes21_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes21_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes21_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes22" Orientation="Horizontal" Grid.Row="4" Grid.Column="6">
+            <TextBlock x:Name="notes22_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes22_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes22_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes22_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes22_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes22_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes22_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes22_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes22_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes23" Orientation="Horizontal" Grid.Row="4" Grid.Column="7">
+            <TextBlock x:Name="notes23_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes23_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes23_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes23_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes23_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes23_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes23_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes23_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes23_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes24" Orientation="Horizontal" Grid.Row="4" Grid.Column="8">
+            <TextBlock x:Name="notes24_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes24_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes24_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes24_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes24_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes24_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes24_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes24_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes24_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes25" Orientation="Horizontal" Grid.Row="4" Grid.Column="10">
+            <TextBlock x:Name="notes25_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes25_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes25_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes25_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes25_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes25_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes25_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes25_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes25_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes26" Orientation="Horizontal" Grid.Row="4" Grid.Column="11">
+            <TextBlock x:Name="notes26_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes26_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes26_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes26_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes26_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes26_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes26_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes26_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes26_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes27" Orientation="Horizontal" Grid.Row="4" Grid.Column="12">
+            <TextBlock x:Name="notes27_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes27_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes27_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes27_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes27_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes27_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes27_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes27_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes27_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes28" Orientation="Horizontal" Grid.Row="6" Grid.Column="2">
+            <TextBlock x:Name="notes28_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes28_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes28_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes28_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes28_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes28_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes28_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes28_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes28_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes29" Orientation="Horizontal" Grid.Row="6" Grid.Column="3">
+            <TextBlock x:Name="notes29_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes29_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes29_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes29_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes29_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes29_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes29_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes29_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes29_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes30" Orientation="Horizontal" Grid.Row="6" Grid.Column="4">
+            <TextBlock x:Name="notes30_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes30_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes30_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes30_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes30_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes30_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes30_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes30_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes30_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes31" Orientation="Horizontal" Grid.Row="6" Grid.Column="6">
+            <TextBlock x:Name="notes31_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes31_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes31_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes31_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes31_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes31_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes31_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes31_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes31_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes32" Orientation="Horizontal" Grid.Row="6" Grid.Column="7">
+            <TextBlock x:Name="notes32_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes32_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes32_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes32_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes32_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes32_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes32_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes32_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes32_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes33" Orientation="Horizontal" Grid.Row="6" Grid.Column="8">
+            <TextBlock x:Name="notes33_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes33_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes33_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes33_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes33_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes33_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes33_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes33_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes33_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes34" Orientation="Horizontal" Grid.Row="6" Grid.Column="10">
+            <TextBlock x:Name="notes34_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes34_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes34_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes34_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes34_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes34_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes34_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes34_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes34_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes35" Orientation="Horizontal" Grid.Row="6" Grid.Column="11">
+            <TextBlock x:Name="notes35_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes35_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes35_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes35_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes35_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes35_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes35_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes35_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes35_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes36" Orientation="Horizontal" Grid.Row="6" Grid.Column="12">
+            <TextBlock x:Name="notes36_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes36_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes36_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes36_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes36_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes36_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes36_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes36_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes36_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes37" Orientation="Horizontal" Grid.Row="7" Grid.Column="2">
+            <TextBlock x:Name="notes37_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes37_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes37_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes37_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes37_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes37_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes37_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes37_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes37_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes38" Orientation="Horizontal" Grid.Row="7" Grid.Column="3">
+            <TextBlock x:Name="notes38_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes38_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes38_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes38_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes38_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes38_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes38_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes38_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes38_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes39" Orientation="Horizontal" Grid.Row="7" Grid.Column="4">
+            <TextBlock x:Name="notes39_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes39_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes39_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes39_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes39_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes39_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes39_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes39_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes39_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes40" Orientation="Horizontal" Grid.Row="7" Grid.Column="6">
+            <TextBlock x:Name="notes40_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes40_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes40_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes40_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes40_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes40_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes40_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes40_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes40_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes41" Orientation="Horizontal" Grid.Row="7" Grid.Column="7">
+            <TextBlock x:Name="notes41_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes41_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes41_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes41_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes41_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes41_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes41_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes41_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes41_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes42" Orientation="Horizontal" Grid.Row="7" Grid.Column="8">
+            <TextBlock x:Name="notes42_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes42_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes42_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes42_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes42_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes42_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes42_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes42_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes42_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes43" Orientation="Horizontal" Grid.Row="7" Grid.Column="10">
+            <TextBlock x:Name="notes43_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes43_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes43_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes43_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes43_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes43_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes43_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes43_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes43_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes44" Orientation="Horizontal" Grid.Row="7" Grid.Column="11">
+            <TextBlock x:Name="notes44_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes44_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes44_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes44_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes44_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes44_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes44_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes44_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes44_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes45" Orientation="Horizontal" Grid.Row="7" Grid.Column="12">
+            <TextBlock x:Name="notes45_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes45_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes45_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes45_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes45_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes45_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes45_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes45_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes45_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes46" Orientation="Horizontal" Grid.Row="8" Grid.Column="2">
+            <TextBlock x:Name="notes46_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes46_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes46_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes46_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes46_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes46_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes46_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes46_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes46_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes47" Orientation="Horizontal" Grid.Row="8" Grid.Column="3">
+            <TextBlock x:Name="notes47_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes47_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes47_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes47_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes47_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes47_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes47_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes47_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes47_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes48" Orientation="Horizontal" Grid.Row="8" Grid.Column="4">
+            <TextBlock x:Name="notes48_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes48_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes48_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes48_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes48_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes48_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes48_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes48_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes48_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes49" Orientation="Horizontal" Grid.Row="8" Grid.Column="6">
+            <TextBlock x:Name="notes49_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes49_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes49_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes49_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes49_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes49_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes49_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes49_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes49_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes50" Orientation="Horizontal" Grid.Row="8" Grid.Column="7">
+            <TextBlock x:Name="notes50_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes50_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes50_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes50_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes50_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes50_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes50_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes50_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes50_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes51" Orientation="Horizontal" Grid.Row="8" Grid.Column="8">
+            <TextBlock x:Name="notes51_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes51_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes51_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes51_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes51_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes51_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes51_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes51_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes51_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes52" Orientation="Horizontal" Grid.Row="8" Grid.Column="10">
+            <TextBlock x:Name="notes52_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes52_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes52_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes52_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes52_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes52_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes52_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes52_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes52_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes53" Orientation="Horizontal" Grid.Row="8" Grid.Column="11">
+            <TextBlock x:Name="notes53_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes53_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes53_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes53_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes53_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes53_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes53_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes53_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes53_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes54" Orientation="Horizontal" Grid.Row="8" Grid.Column="12">
+            <TextBlock x:Name="notes54_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes54_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes54_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes54_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes54_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes54_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes54_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes54_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes54_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes55" Orientation="Horizontal" Grid.Row="10" Grid.Column="2">
+            <TextBlock x:Name="notes55_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes55_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes55_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes55_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes55_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes55_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes55_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes55_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes55_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes56" Orientation="Horizontal" Grid.Row="10" Grid.Column="3">
+            <TextBlock x:Name="notes56_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes56_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes56_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes56_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes56_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes56_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes56_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes56_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes56_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes57" Orientation="Horizontal" Grid.Row="10" Grid.Column="4">
+            <TextBlock x:Name="notes57_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes57_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes57_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes57_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes57_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes57_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes57_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes57_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes57_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes58" Orientation="Horizontal" Grid.Row="10" Grid.Column="6">
+            <TextBlock x:Name="notes58_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes58_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes58_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes58_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes58_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes58_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes58_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes58_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes58_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes59" Orientation="Horizontal" Grid.Row="10" Grid.Column="7">
+            <TextBlock x:Name="notes59_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes59_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes59_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes59_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes59_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes59_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes59_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes59_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes59_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes60" Orientation="Horizontal" Grid.Row="10" Grid.Column="8">
+            <TextBlock x:Name="notes60_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes60_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes60_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes60_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes60_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes60_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes60_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes60_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes60_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes61" Orientation="Horizontal" Grid.Row="10" Grid.Column="10">
+            <TextBlock x:Name="notes61_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes61_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes61_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes61_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes61_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes61_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes61_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes61_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes61_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes62" Orientation="Horizontal" Grid.Row="10" Grid.Column="11">
+            <TextBlock x:Name="notes62_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes62_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes62_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes62_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes62_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes62_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes62_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes62_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes62_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes63" Orientation="Horizontal" Grid.Row="10" Grid.Column="12">
+            <TextBlock x:Name="notes63_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes63_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes63_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes63_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes63_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes63_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes63_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes63_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes63_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes64" Orientation="Horizontal" Grid.Row="11" Grid.Column="2">
+            <TextBlock x:Name="notes64_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes64_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes64_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes64_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes64_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes64_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes64_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes64_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes64_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes65" Orientation="Horizontal" Grid.Row="11" Grid.Column="3">
+            <TextBlock x:Name="notes65_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes65_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes65_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes65_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes65_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes65_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes65_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes65_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes65_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes66" Orientation="Horizontal" Grid.Row="11" Grid.Column="4">
+            <TextBlock x:Name="notes66_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes66_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes66_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes66_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes66_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes66_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes66_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes66_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes66_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes67" Orientation="Horizontal" Grid.Row="11" Grid.Column="6">
+            <TextBlock x:Name="notes67_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes67_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes67_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes67_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes67_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes67_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes67_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes67_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes67_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes68" Orientation="Horizontal" Grid.Row="11" Grid.Column="7">
+            <TextBlock x:Name="notes68_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes68_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes68_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes68_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes68_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes68_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes68_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes68_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes68_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes69" Orientation="Horizontal" Grid.Row="11" Grid.Column="8">
+            <TextBlock x:Name="notes69_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes69_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes69_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes69_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes69_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes69_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes69_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes69_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes69_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes70" Orientation="Horizontal" Grid.Row="11" Grid.Column="10">
+            <TextBlock x:Name="notes70_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes70_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes70_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes70_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes70_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes70_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes70_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes70_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes70_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes71" Orientation="Horizontal" Grid.Row="11" Grid.Column="11">
+            <TextBlock x:Name="notes71_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes71_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes71_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes71_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes71_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes71_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes71_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes71_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes71_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes72" Orientation="Horizontal" Grid.Row="11" Grid.Column="12">
+            <TextBlock x:Name="notes72_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes72_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes72_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes72_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes72_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes72_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes72_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes72_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes72_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes73" Orientation="Horizontal" Grid.Row="12" Grid.Column="2">
+            <TextBlock x:Name="notes73_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes73_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes73_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes73_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes73_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes73_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes73_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes73_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes73_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes74" Orientation="Horizontal" Grid.Row="12" Grid.Column="3">
+            <TextBlock x:Name="notes74_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes74_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes74_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes74_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes74_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes74_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes74_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes74_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes74_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes75" Orientation="Horizontal" Grid.Row="12" Grid.Column="4">
+            <TextBlock x:Name="notes75_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes75_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes75_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes75_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes75_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes75_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes75_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes75_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes75_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes76" Orientation="Horizontal" Grid.Row="12" Grid.Column="6">
+            <TextBlock x:Name="notes76_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes76_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes76_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes76_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes76_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes76_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes76_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes76_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes76_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes77" Orientation="Horizontal" Grid.Row="12" Grid.Column="7">
+            <TextBlock x:Name="notes77_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes77_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes77_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes77_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes77_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes77_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes77_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes77_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes77_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes78" Orientation="Horizontal" Grid.Row="12" Grid.Column="8">
+            <TextBlock x:Name="notes78_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes78_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes78_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes78_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes78_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes78_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes78_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes78_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes78_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes79" Orientation="Horizontal" Grid.Row="12" Grid.Column="10">
+            <TextBlock x:Name="notes79_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes79_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes79_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes79_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes79_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes79_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes79_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes79_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes79_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes80" Orientation="Horizontal" Grid.Row="12" Grid.Column="11">
+            <TextBlock x:Name="notes80_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes80_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes80_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes80_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes80_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes80_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes80_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes80_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes80_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        <WrapPanel x:Name="sudokuNotes81" Orientation="Horizontal" Grid.Row="12" Grid.Column="12">
+            <TextBlock x:Name="notes81_1" Text="1" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes81_2" Text="2" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes81_3" Text="3" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes81_4" Text="4" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes81_5" Text="5" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes81_6" Text="6" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes81_7" Text="7" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes81_8" Text="8" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+            <TextBlock x:Name="notes81_9" Text="9" Width="16" TextAlignment="Center" Visibility="Hidden"/>
+        </WrapPanel>
+        
+    </Grid>
+</Window>
